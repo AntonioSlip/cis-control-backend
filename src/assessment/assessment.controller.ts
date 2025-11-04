@@ -5,6 +5,11 @@ import { AssessmentService } from './assessment.service';
 export class AssessmentController {
   constructor(private readonly assessmentService: AssessmentService) {}
 
+  @Get('by-user/:userId')
+  async findLatestByUser(@Param('userId') userId: number) {
+    return await this.assessmentService.findLatestByUser(userId);
+  }
+
   @Post(':userId')
   async create(
     @Param('userId') userId: number,

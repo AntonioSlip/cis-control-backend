@@ -36,6 +36,15 @@ export class AssessmentService {
     });
   }
 
+  async findLatestByUser(userId: number) {
+    const result = await this.assessmentRepo.findOne({
+      where: { user: { id: userId } },
+      order: { startedAt: 'DESC' },
+    });
+
+    return result;
+  }
+
   async calculateScores(assessmentId: number) {
     const answers = await this.answerRepo.find({
       where: { assessment: { id: assessmentId } },
