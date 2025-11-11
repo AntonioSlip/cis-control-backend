@@ -33,8 +33,20 @@ export class Answer {
   @Column({ default: true })
   applicable: boolean;
 
-  @Column({ length: 30, nullable: true })
-  maturityLevel: string;
+  @Column({ name: 'asset_type', length: 100, nullable: true })
+  assetType: string;
+
+  @Column({ name: 'security_function', length: 100, nullable: true })
+  securityFunction: string;
+
+  @Column({ name: 'ig1', type: 'boolean', nullable: true, default: false })
+  ig1: boolean;
+
+  @Column({ name: 'ig2', type: 'boolean', nullable: true, default: false })
+  ig2: boolean;
+
+  @Column({ name: 'ig3', type: 'boolean', nullable: true, default: false })
+  ig3: boolean;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

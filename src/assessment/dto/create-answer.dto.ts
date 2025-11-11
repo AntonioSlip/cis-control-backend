@@ -3,5 +3,9 @@ export class CreateAnswerDto {
   safeguardCode: string;
   score: number;
   applicable?: boolean;
-  maturityLevel?: string;
+  assetType?: string;
+  securityFunction?: string;
+  ig1?: number;
+  ig2?: number;
+  ig3?: number;
 }
